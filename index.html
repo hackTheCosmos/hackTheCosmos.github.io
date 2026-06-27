@@ -587,26 +587,5 @@
     <footer>
       <p>© 2026 Théo Baileche — Spécialiste automatisation Make & n8n</p>
     </footer>
-    <script>
-      (function () {
-        const ua = navigator.userAgent || "";
-        const isFacebookBrowser = ua.includes("FBAN") || ua.includes("FBAV");
-    
-        if (isFacebookBrowser) {
-          // Sur Android : intent:// force l'ouverture dans Chrome
-          const links = document.querySelectorAll('a[href*="linkedin.com"]');
-          links.forEach((link) => {
-            const url = link.href;
-            link.addEventListener("click", function (e) {
-              e.preventDefault();
-              window.location.href =
-                "intent://" +
-                url.replace("https://", "") +
-                "#Intent;scheme=https;package=com.android.chrome;end";
-            });
-          });
-        }
-      })();
-    </script>
   </body>
 </html>
